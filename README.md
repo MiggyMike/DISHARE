@@ -4,13 +4,15 @@
 
 ### Michael Jennings
 
-[Website](https://miggymike.github.io/) | [LinkedIn](https://www.linkedin.com/in/mjennings6/)
+[Website](https://miggymike.github.io/) | [LinkedIn](https://www.linkedin.com/in/mjennings6/) | [You Tried It](http://you-tried-it.surge.sh/index.html)
 
 ---
 
 ### Overview
 
 Produce a recipie sharing blog site where user can post, like and save recipies amongst one another.
+
+In essence this would be an extension of the [You Tried It](http://you-tried-it.surge.sh/index.html) application.
 
 ---
 
