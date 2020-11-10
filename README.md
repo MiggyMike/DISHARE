@@ -56,7 +56,7 @@ Project was deployed on netlify and can be found [here](link).
 ### ERD (Enity Relationship Diagram)
 
 ![hierachy map](./img/ConceptMap.jpg)
-![concept map](./img/di_sh_are_blog_ERD.jpg)
+![concept map](./img/di_SH_are_blog_ERD.jpg)
 
 ---
 
