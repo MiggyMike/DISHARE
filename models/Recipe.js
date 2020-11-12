@@ -57,6 +57,68 @@ module.exports = new Schema(
         type: String,
         required: false,
       },
+      ing7: {
+        type: String,
+        required: false,
+      },
+      ing8: {
+        type: String,
+        required: false,
+      },
+      ing9: {
+        type: String,
+        required: false,
+      },
+   
+      ing10: {
+        type: String,
+        required: false,
+      },
+   
+      ing11: {
+        type: String,
+        required: false,
+      },
+   
+      ing12: {
+        type: String,
+        required: false,
+      },
+      ing13: {
+        type: String,
+        required: false,
+      },
+      ing14: {
+        type: String,
+        required: false,
+      },
+      ing15: {
+        type: String,
+        required: false,
+      },
+   
+      ing16: {
+        type: String,
+        required: false,
+      },
+   
+      ing17: {
+        type: String,
+        required: false,
+      },
+   
+      ing18: {
+        type: String,
+        required: false,
+      },
+      ing19: {
+        type: String,
+        required: false,
+      },
+      ing20: {
+        type: String,
+        required: false,
+      },
     },
     instructions: {
       step1: {
@@ -84,6 +146,42 @@ module.exports = new Schema(
         required: false,
       },
       step7: {
+        type: String,
+        required: false,
+      },
+      step8: {
+        type: String,
+        required: false,
+      },
+      step9: {
+        type: String,
+        required: false,
+      },
+      step10: {
+        type: String,
+        required: false,
+      },
+      step11: {
+        type: String,
+        required: false,
+      },
+      step12: {
+        type: String,
+        required: false,
+      },
+      step13: {
+        type: String,
+        required: false,
+      },
+      step14: {
+        type: String,
+        required: false,
+      },
+      step15: {
+        type: String,
+        required: false,
+      },
+      step16: {
         type: String,
         required: false,
       },

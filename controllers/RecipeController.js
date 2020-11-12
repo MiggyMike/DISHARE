@@ -49,7 +49,6 @@ const CreateRecipe = async (req, res) => {
 };
 
 const DeleteRecipe = async (req, res) => {
-  const recipe = await Recipe.findById(req.params.recipe_id)
   try {
     await Comment.deleteMany({ _id: { $in: recipe.comments } });
     await Recipe.findByIdAndDelete(req.params.recipe_id);
