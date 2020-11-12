@@ -41,7 +41,7 @@ const GetRecipeById = async (req, res) => {
 const CreateRecipe = async (req, res) => {
   try {
     const newRecipe = new Recipe({ ...req.body, user_id: req.params.user_id });
-    newPost.save();
+    newRecipe.save();
     res.send(newRecipe);
   } catch (error) {
     throw error;
@@ -49,10 +49,11 @@ const CreateRecipe = async (req, res) => {
 };
 
 const DeleteRecipe = async (req, res) => {
+  const recipe = await Recipe.findById(req.params.recipe_id)
   try {
     await Comment.deleteMany({ _id: { $in: recipe.comments } });
     await Recipe.findByIdAndDelete(req.params.recipe_id);
-    res.send({ msg: "Post deleted" });
+    res.send({ msg: "Recipe deleted" });
   } catch (error) {
     throw error;
   }
@@ -61,12 +62,12 @@ const DeleteRecipe = async (req, res) => {
 const UpdateRecipe = async (req, res) => {
   try {
     await Recipe.findByIdAndUpdate(
-      req.params.post_id,
+      req.params.recipe_id,
       {
         ...req.body,
       },
       { new: true, useFindAndModify: false },
-      (err, (d) => (err ? err : res.send(d)))
+      // (err, (d) => (err ? err : res.send(d)))
     );
   } catch (error) {
     throw error;

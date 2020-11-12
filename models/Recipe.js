@@ -29,13 +29,64 @@ module.exports = new Schema(
         required: true,
       },
     },
-    ingreditents: {
-      type: String,
-      required: true,
+    ingredients: {
+      ing1: {
+        type: String,
+        required: false,
+      },
+      ing2: {
+        type: String,
+        required: false,
+      },
+      ing3: {
+        type: String,
+        required: false,
+      },
+   
+      ing4: {
+        type: String,
+        required: false,
+      },
+   
+      ing5: {
+        type: String,
+        required: false,
+      },
+   
+      ing6: {
+        type: String,
+        required: false,
+      },
     },
     instructions: {
-      type: String,
-      required: true,
+      step1: {
+        type: String,
+        required: false,
+      },
+      step2: {
+        type: String,
+        required: false,
+      },
+      step3: {
+        type: String,
+        required: false,
+      },
+      step4: {
+        type: String,
+        required: false,
+      },
+      step5: {
+        type: String,
+        required: false,
+      },
+      step6: {
+        type: String,
+        required: false,
+      },
+      step7: {
+        type: String,
+        required: false,
+      },
     },
     category: {
       type: String,
@@ -47,12 +98,10 @@ module.exports = new Schema(
         ref: 'comments',
       },
     ],
-    user: [
-      {
+    user_id: {
         type: Schema.Types.ObjectId,
         ref: 'user',
       },
-    ],
-  },
+    },
   { timestapms: true }
 );
