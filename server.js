@@ -1,6 +1,6 @@
+const AppRouter = require("./routes/AppRouter");
+
 const express = require("express");
-const mongoose = require("mongoose");
-const nodemon = require("nodemon");
 // dependenices
 ///////////////
 const logger = require("morgan");
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.disable("X-Powered-By");
 app.get("/", (req, res) => res.send({ msg: "Server Working" }));
-// app.use('/api', AppRouter)
+app.use('/api', AppRouter)
 //  defining the Routes
 //////////////////////
 

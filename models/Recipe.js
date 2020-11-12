@@ -1,10 +1,15 @@
-const { Schema } = require("mongooose");
+const { Schema } = require("mongoose");
 
 module.exports = new Schema(
   {
     title: {
       type: String,
       required: true,
+    },
+    popularity_rating: {
+      type: Number,
+      default: 0,
+      required: true
     },
     summary: {
       prepTime: {
@@ -39,13 +44,13 @@ module.exports = new Schema(
     comments: [
       {
         type: Schema.Types.ObjectId,
-        ref: comments,
+        ref: 'comments',
       },
     ],
     user: [
       {
         type: Schema.Types.ObjectId,
-        ref: user,
+        ref: 'user',
       },
     ],
   },

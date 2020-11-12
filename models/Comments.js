@@ -1,4 +1,4 @@
-const { Schema } = required("mongoose");
+const { Schema } = require("mongoose");
 
 module.exports = new Schema(
   {
@@ -7,7 +7,7 @@ module.exports = new Schema(
       required: true,
     },
     rating: {
-      type: rating,
+      type: Number,
       ratingValue: 5,
       lowRating: 1,
       highRating: 5,
