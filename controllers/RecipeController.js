@@ -60,6 +60,7 @@ const DeleteRecipe = async (req, res) => {
 
 const UpdateRecipe = async (req, res) => {
   try {
+    // const updatedPost =
     await Recipe.findByIdAndUpdate(
       req.params.recipe_id,
       {
