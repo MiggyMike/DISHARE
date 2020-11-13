@@ -11,7 +11,7 @@ const connection = require("./db/connection");
 //  middleware dependencies
 ///////////////
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 //  Setting the port
 ////////////////////
 
