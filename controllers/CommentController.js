@@ -5,7 +5,7 @@ const CreateComment = async (req, res) => {
     const comment = new Comment({ ...req.body, user_id: req.params.user_id })
     comment.save()
     await Recipe.update(
-      { _id: req.params.post_id },
+      { _id: req.params.recipe_id },
       {
         $push: {
           comments: comment
@@ -21,12 +21,12 @@ const CreateComment = async (req, res) => {
 const RemoveComment = async (req, res) => {
   try {
     await Comment.deleteOne({ _id: req.params.comment_id })
-    const updatedPost = await Recipe.findByIdAndUpdate(
-      req.params.post_id,
+    const updatedRecipe = await Recipe.findByIdAndUpdate(
+      req.params.recipe_id,
       { $pull: { comments: { _id: req.params.comment_id } } },
       { upsert: true, new: true }
     )
-    res.send(updatedPost)
+    res.send(updatedRecipe)
   } catch (error) {
     throw error
   }

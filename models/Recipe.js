@@ -190,16 +190,16 @@ module.exports = new Schema(
       type: String,
       required: true,
     },
+    user_id: {
+      type: Schema.Types.ObjectId,
+      ref: 'users',
+    },
     comments: [
       {
         type: Schema.Types.ObjectId,
         ref: 'comments',
       },
-    ],
-    user_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-      },
+    ]
     },
   { timestapms: true }
 );
