@@ -21,12 +21,15 @@ const CreateComment = async (req, res) => {
 const RemoveComment = async (req, res) => {
   try {
     await Comment.deleteOne({ _id: req.params.comment_id })
-    const updatedRecipe = await Recipe.findByIdAndUpdate(
-      req.params.recipe_id,
-      { $pull: { comments: { _id: req.params.comment_id } } },
-      { upsert: true, new: true }
-    )
-    res.send(updatedRecipe)
+    await Recipe.findOneAndUpdate(
+      {_id: req.params.recipe_id},
+      { $pull: { comments:  req.params.comment_id  } },
+      { upsert: true, new: true, useFindAndModify: true },
+      (err, updatedRecipe)=>{
+        if(err){throw err}
+      res.send(updatedRecipe)
+      }
+      )
   } catch (error) {
     throw error
   }
