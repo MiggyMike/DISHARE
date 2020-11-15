@@ -39,8 +39,22 @@ const GetRecipeById = async (req, res) => {
 };
 
 const CreateRecipe = async (req, res) => {
+  console.log('Summary stuff:', req.body.prepTime)
   try {
-    const newRecipe = new Recipe({ ...req.body, user_id: req.params.user_id });
+    const newRecipe = new Recipe({ 
+      
+      title: req.body.title,
+      summary: req.body.summary,
+      prepTime: req.body.prepTime,
+      cookTime: req.body.cookTime,
+      totalTime: req.body.totalTime,
+      servings: req.body.servings,
+      image_url: req.body.image_url,
+      ingredients: req.body.ingredients.split(' '),
+      instructions: req.body.instructions,
+      category: req.body.category,
+      user_id: req.params.user_id 
+    });
     newRecipe.save();
     res.send(newRecipe);
   } catch (error) {
