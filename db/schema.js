@@ -5,7 +5,7 @@ const UserModel = require("./models/User");
 // Importing schemas to export them in one file
 
 const Comment = model("comments", CommentModel);
-const Recipe = model("recipies", RecipeModel);
+const Recipe = model("recipes", RecipeModel);
 const User = model("users", UserModel);
 
 module.exports = {
