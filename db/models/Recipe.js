@@ -16,113 +16,28 @@ module.exports = new Schema(
       required: true
     },
     summary: {
-      prepTime: {
-        type: String,
-        required: true,
-      },
-      cookTime: {
-        type: String,
-        required: true,
-      },
-      totalTime: {
-        type: String,
-        required: true,
-      },
-      servings: {
-        type: String,
-        required: true,
-      },
+      type: String,
+      required: false
+    },
+    prepTime: {
+      type: String,
+      required: true,
+    },
+    cookTime: {
+      type: String,
+      required: true,
+    },
+    totalTime: {
+      type: String,
+      required: true,
+    },
+    servings: {
+      type: String,
+      required: true,
     },
     ingredients: {
-      ing1: {
-        type: String,
+        type: Array,
         required: false,
-      },
-      ing2: {
-        type: String,
-        required: false,
-      },
-      ing3: {
-        type: String,
-        required: false,
-      },
-   
-      ing4: {
-        type: String,
-        required: false,
-      },
-   
-      ing5: {
-        type: String,
-        required: false,
-      },
-   
-      ing6: {
-        type: String,
-        required: false,
-      },
-      ing7: {
-        type: String,
-        required: false,
-      },
-      ing8: {
-        type: String,
-        required: false,
-      },
-      ing9: {
-        type: String,
-        required: false,
-      },
-   
-      ing10: {
-        type: String,
-        required: false,
-      },
-   
-      ing11: {
-        type: String,
-        required: false,
-      },
-   
-      ing12: {
-        type: String,
-        required: false,
-      },
-      ing13: {
-        type: String,
-        required: false,
-      },
-      ing14: {
-        type: String,
-        required: false,
-      },
-      ing15: {
-        type: String,
-        required: false,
-      },
-   
-      ing16: {
-        type: String,
-        required: false,
-      },
-   
-      ing17: {
-        type: String,
-        required: false,
-      },
-   
-      ing18: {
-        type: String,
-        required: false,
-      },
-      ing19: {
-        type: String,
-        required: false,
-      },
-      ing20: {
-        type: String,
-        required: false,
-      },
     },
     instructions: {
       step1: {
