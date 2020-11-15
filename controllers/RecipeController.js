@@ -50,7 +50,7 @@ const CreateRecipe = async (req, res) => {
       totalTime: req.body.totalTime,
       servings: req.body.servings,
       image_url: req.body.image_url,
-      ingredients: req.body.ingredients.split(' '),
+      ingredients: req.body.ingredients.split(', '),
       instructions: req.body.instructions,
       category: req.body.category,
       user_id: req.params.user_id 
