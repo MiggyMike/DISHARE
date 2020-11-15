@@ -47,7 +47,7 @@ export default class Recipes extends Component {
                           <div className="flex-col">
                             <div className="card-content">
                               <h3>{recipe.title}</h3>
-                              <p>{recipe.description.substring(0, 50)}...</p>
+                              <p>{recipe.summary.substring(0, 50)}...</p>
                             </div>
                             <div className="card-content-top flex-row">
                               <div className="stats">
