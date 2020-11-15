@@ -11,6 +11,10 @@ module.exports = new Schema(
       default: 0,
       required: true
     },
+    image_url: {
+      type: String,
+      required: true
+    },
     summary: {
       prepTime: {
         type: String,
