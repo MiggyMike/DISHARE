@@ -10,9 +10,7 @@ export default({ authenticated, currentUser, className }) => {
         <li><Link to="/recipes"> Recipes </Link></li>
         <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/upload">Post Recipe</Link></li>
-        <li><Link activeClassName="nav-active"
-          to="/"
-         >Sign Out</Link></li>
+        <li><Link to="/">Sign Out</Link></li>
       </ul>
     </nav>
     </header>
