@@ -37,73 +37,11 @@ module.exports = new Schema(
     },
     ingredients: {
         type: Array,
-        required: false,
+        required: true,
     },
     instructions: {
-      step1: {
         type: String,
-        required: false,
-      },
-      step2: {
-        type: String,
-        required: false,
-      },
-      step3: {
-        type: String,
-        required: false,
-      },
-      step4: {
-        type: String,
-        required: false,
-      },
-      step5: {
-        type: String,
-        required: false,
-      },
-      step6: {
-        type: String,
-        required: false,
-      },
-      step7: {
-        type: String,
-        required: false,
-      },
-      step8: {
-        type: String,
-        required: false,
-      },
-      step9: {
-        type: String,
-        required: false,
-      },
-      step10: {
-        type: String,
-        required: false,
-      },
-      step11: {
-        type: String,
-        required: false,
-      },
-      step12: {
-        type: String,
-        required: false,
-      },
-      step13: {
-        type: String,
-        required: false,
-      },
-      step14: {
-        type: String,
-        required: false,
-      },
-      step15: {
-        type: String,
-        required: false,
-      },
-      step16: {
-        type: String,
-        required: false,
-      },
+        required: true,
     },
     category: {
       type: String,
