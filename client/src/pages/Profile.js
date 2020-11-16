@@ -41,18 +41,19 @@ export default class Profile extends Component {
   render() {
     return (
       <div className="profile">
+        <div className="user content"></div>
         <div>
           {this.state.recipes.length ? (
             <div className="recipe-content container row ">
               <div></div>
               {this.state.recipes.map((recipe) => (
-                <div key={recipe._id} className="col s3">
+                <div key={recipe._id} className="col s4">
                   <Card
                     onClick={() =>
                       this.props.history.push(`/recipe/${recipe._id}`)
                     }
                   >
-                    <div className="mask flex-col">
+                    <div className="">
                       <div className="card-content">
                         <h3>{recipe.title}</h3>
                         <p>{recipe.description}</p>
@@ -60,15 +61,19 @@ export default class Profile extends Component {
                     </div>
                     <img src={recipe.image_url} alt="current of food" />
                   </Card>
-                  <div className="flex-row button-wrapper">
+                  <div className="">
                     <button
+                      className="btn blue col s4"
                       onClick={() =>
                         this.props.history.push(`/edit/${recipe._id}`)
                       }
                     >
                       Edit
                     </button>
-                    <button onClick={() => this.deleteRecipe(recipe._id)}>
+                    <button
+                      className="btn red right col s4"
+                      onClick={() => this.deleteRecipe(recipe._id)}
+                    >
                       Delete
                     </button>
                   </div>
