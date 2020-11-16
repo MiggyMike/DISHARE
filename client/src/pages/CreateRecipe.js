@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import TextInput from "../components/TextInput";
 import { __UploadRecipe } from "../services/RecipeServices";
 
 export default class CreateRecipe extends Component {
@@ -114,30 +113,24 @@ export default class CreateRecipe extends Component {
               <label>Image URL</label>
             </div>
             <div className="input-field col s12">
-              <textarea 
+              <textarea
                 name="ingredients"
                 value={ingredients}
                 onChange={this.handleChange}
                 type="text"
-                className="materialize-textarea">
-                </textarea>
-                <label 
-                for="textarea1">
-                  Ingredients
-                  </label>
+                className="materialize-textarea"
+              ></textarea>
+              <label>Ingredients</label>
             </div>
             <div className="input-field col s12">
-              <textarea 
+              <textarea
                 name="instructions"
                 value={instructions}
                 onChange={this.handleChange}
                 type="text"
-                className="materialize-textarea">
-                </textarea>
-                <label 
-                for="textarea1">
-                  Instructions
-                  </label>
+                className="materialize-textarea"
+              ></textarea>
+              <label>Instructions</label>
             </div>
             <div className="input-field col s12">
               <input
