@@ -49,9 +49,7 @@ export default class UpdateRecipe extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("1");
       await __UpdateRecipe(this.state, this.props.match.params.recipe_id);
-      console.log("4");
       this.props.history.push("/profile/:user_id");
     } catch (error) {
       console.log(error);
