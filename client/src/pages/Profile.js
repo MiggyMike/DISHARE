@@ -46,7 +46,7 @@ export default class Profile extends Component {
                 <div key={recipe._id}>
                   <Card
                     onClick={() =>
-                      this.props.history.push(`/recipes/${recipe._id}`)
+                      this.props.history.push(`/recipe/${recipe._id}`)
                     }
                   >
                     <div className="mask flex-col">
@@ -55,7 +55,7 @@ export default class Profile extends Component {
                         <p>{recipe.description}</p>
                       </div>
                     </div>
-                    <img src={recipe.image_url} alt="sf" />
+                    <img src={recipe.image_url} alt="current of food" />
                   </Card>
                   <div className="flex-row button-wrapper">
                     <button
