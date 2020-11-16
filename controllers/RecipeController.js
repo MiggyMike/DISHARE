@@ -39,10 +39,9 @@ const GetRecipeById = async (req, res) => {
 };
 
 const CreateRecipe = async (req, res) => {
-  console.log('Summary stuff:', req.body.prepTime)
+  console.log("Summary stuff:", req.body.prepTime);
   try {
-    const newRecipe = new Recipe({ 
-      
+    const newRecipe = new Recipe({
       title: req.body.title,
       summary: req.body.summary,
       prepTime: req.body.prepTime,
@@ -50,10 +49,10 @@ const CreateRecipe = async (req, res) => {
       totalTime: req.body.totalTime,
       servings: req.body.servings,
       image_url: req.body.image_url,
-      ingredients: req.body.ingredients.split(', '),
+      ingredients: req.body.ingredients.split(", "),
       instructions: req.body.instructions,
       category: req.body.category,
-      user_id: req.params.user_id 
+      user_id: req.params.user_id,
     });
     newRecipe.save();
     res.send(newRecipe);
@@ -64,9 +63,10 @@ const CreateRecipe = async (req, res) => {
 
 const DeleteRecipe = async (req, res) => {
   try {
+    const recipe = await Recipe.findById(req.params.recipe_id);
     await Comment.deleteMany({ _id: { $in: recipe.comments } });
     await Recipe.findByIdAndDelete(req.params.recipe_id);
-    res.send({ msg: "Recipe deleted" });
+    res.send({ RECIPE: "deleted" });
   } catch (error) {
     throw error;
   }
@@ -79,9 +79,9 @@ const UpdateRecipe = async (req, res) => {
       {
         ...req.body,
       },
-      { new: true, useFindAndModify: false },
-      // (err, (d) => (err ? err : res.send(d)))
+      { new: true, useFindAndModify: false }
     );
+    res.send({ RECIPE: "updated" });
   } catch (error) {
     throw error;
   }
