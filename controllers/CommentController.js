@@ -1,39 +1,43 @@
-const { Recipe, Comment } = require('../db/schema')
+const { Recipe, Comment } = require("../db/schema");
 
 const CreateComment = async (req, res) => {
   try {
-    const comment = new Comment({ ...req.body, user_id: req.params.user_id })
-    comment.save()
+    const comment = new Comment({ ...req.body, user_id: req.params.user_id });
+    console.log(3);
+    comment.save();
     await Recipe.update(
       { _id: req.params.recipe_id },
       {
         $push: {
-          comments: comment
-        }
+          comments: comment,
+        },
       }
-    )
-    res.send(comment)
+    );
+    res.send(comment);
+    console.log(4);
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 const RemoveComment = async (req, res) => {
   try {
-    await Comment.deleteOne({ _id: req.params.comment_id })
+    await Comment.deleteOne({ _id: req.params.comment_id });
     await Recipe.findOneAndUpdate(
-      {_id: req.params.recipe_id},
-      { $pull: { comments:  req.params.comment_id  } },
+      { _id: req.params.recipe_id },
+      { $pull: { comments: req.params.comment_id } },
       { upsert: true, new: true, useFindAndModify: true },
-      (err, updatedRecipe)=>{
-        if(err){throw err}
-      res.send(updatedRecipe)
+      (err, updatedRecipe) => {
+        if (err) {
+          throw err;
+        }
+        res.send(updatedRecipe);
       }
-      )
+    );
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 const UpdateComment = async (req, res) => {
   try {
@@ -42,14 +46,14 @@ const UpdateComment = async (req, res) => {
       { ...req.body },
       { upsert: true, new: true },
       (err, d) => (err ? err : res.send(d))
-    )
+    );
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 module.exports = {
   CreateComment,
   RemoveComment,
-  UpdateComment
-}
+  UpdateComment,
+};
