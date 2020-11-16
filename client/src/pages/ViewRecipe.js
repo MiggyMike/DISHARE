@@ -37,7 +37,13 @@ export default class ViewRecipe extends Component {
             <div className="right-content col-2 flex-col">
               <div className="content-top">
                 <h2>{recipe.title}</h2>
-                <p>{recipe.description}</p>
+                <p>{recipe.summary}</p>
+                <p>{recipe.prepTime}</p>
+                <p>{recipe.cookTime}</p>
+                <p>{recipe.totalTime}</p>
+                <p>{recipe.servings}</p>
+                <p>{recipe.ingredients}</p>
+                <p>{recipe.instructions}</p>
                 <div className="stats flex-row">
                   <div>
                     <p>Likes</p>
