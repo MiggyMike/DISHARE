@@ -31,7 +31,10 @@ export const __GetRecipe = async (recipeId) => {
 
 export const __UpdateRecipe = async (formData, recipeId) => {
   try {
-    const res = await ApiClient.put(`/recipes/${recipeId}?active=true`, formData);
+    const res = await ApiClient.put(
+      `/recipes/${recipeId}?active=true`,
+      formData
+    );
     console.log(res.data);
     return res.data;
   } catch (error) {
