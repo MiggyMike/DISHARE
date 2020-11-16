@@ -49,7 +49,9 @@ export default class UpdateRecipe extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("1");
       await __UpdateRecipe(this.state, this.props.match.params.recipe_id);
+      console.log("4");
       this.props.history.push("/profile/:user_id");
     } catch (error) {
       console.log(error);
@@ -70,123 +72,115 @@ export default class UpdateRecipe extends Component {
       category,
     } = this.state;
     return (
-      <div className=" container row">
+      <div className="container row">
         <form className="col s12" action="#" onSubmit={this.handleSubmit}>
-          <div className="input-field col s12">
-            <input
-              type="text"
-              name="title"
-              value={title}
-              onChange={this.handleChange}
-            />
-            <span className="helper-text">
-              Title
-            </span>
-          </div>
-          <div className="input-field col s12">
-            <input
-              type="text"
-              name="summary"
-              value={summary}
-              onChange={this.handleChange}
-            />
-            <span className="helper-text">
-              Summary
-            </span>
-          </div>
-          <div className="row">
-            <div className="input-field col s3">
+          <div className="card">
+            <div className="input-field col s12">
               <input
                 type="text"
-                name="prepTime"
-                value={prepTime}
+                name="title"
+                value={title}
                 onChange={this.handleChange}
               />
-              <span class="helper-text" data-error="wrong" data-success="right">
-                Prep Time
-              </span>
-            </div>
-            <div className="input-field col s3">
-              <input
-                type="text"
-                name="cookTime"
-                value={cookTime}
-                onChange={this.handleChange}
-              />
-              <span className="helper-text">
-                Cook Time
-              </span>
-            </div>
-            <div className="input-field col s3">
-              <input
-                type="text"
-                name="totalTime"
-                value={totalTime}
-                onChange={this.handleChange}
-              />
-              <span className="helper-text">
-                Total Time
-              </span>
-            </div>
-            <div className="input-field col s3">
-              <input
-                type="text"
-                name="servings"
-                value={servings}
-                onChange={this.handleChange}
-              />
-              <span className="helper-text">
-                Servings
-              </span>
+              <span className="helper-text">Title</span>
             </div>
             <div className="input-field col s12">
               <input
-                name="image_url"
-                value={image_url}
-                onChange={this.handleChange}
                 type="text"
+                name="summary"
+                value={summary}
+                onChange={this.handleChange}
               />
-              <span className="helper-text">
-                Image URL
-              </span>
+              <span className="helper-text">Summary</span>
             </div>
-            <div className="input-field col s12">
-              <textarea
-                name="ingredients"
-                value={ingredients}
-                onChange={this.handleChange}
-                type="text"
-                className="materialize-textarea"
-              ></textarea>
-              <span className="helper-text">
-                Ingredients
-              </span>
-            </div>
-            <div className="input-field col s12">
-              <textarea
-                name="instructions"
-                value={instructions}
-                onChange={this.handleChange}
-                type="text"
-                className="materialize-textarea"
-              ></textarea>
-              <span className="helper-text">
-                Instructions
-              </span>
-            </div>
-            <div className="input-field col s12">
-              <input
-                name="category"
-                value={category}
-                onChange={this.handleChange}
-                type="text"
-              />
-              <span  className="helper-text">
-                Breafast, Brunch, Lunch, Snack, Dinner, etc.
-              </span>
+            <div className="row">
+              <div className="input-field col s3">
+                <input
+                  type="text"
+                  name="prepTime"
+                  value={prepTime}
+                  onChange={this.handleChange}
+                />
+                <span
+                  className="helper-text"
+                  data-error="wrong"
+                  data-success="right"
+                >
+                  Prep Time
+                </span>
+              </div>
+              <div className="input-field col s3">
+                <input
+                  type="text"
+                  name="cookTime"
+                  value={cookTime}
+                  onChange={this.handleChange}
+                />
+                <span className="helper-text">Cook Time</span>
+              </div>
+              <div className="input-field col s3">
+                <input
+                  type="text"
+                  name="totalTime"
+                  value={totalTime}
+                  onChange={this.handleChange}
+                />
+                <span className="helper-text">Total Time</span>
+              </div>
+              <div className="input-field col s3">
+                <input
+                  type="text"
+                  name="servings"
+                  value={servings}
+                  onChange={this.handleChange}
+                />
+                <span className="helper-text">Servings</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  name="image_url"
+                  value={image_url}
+                  onChange={this.handleChange}
+                  type="text"
+                />
+                <span className="helper-text">Image URL</span>
+              </div>
+              <div className="input-field col s12">
+                <textarea
+                  name="ingredients"
+                  value={ingredients}
+                  onChange={this.handleChange}
+                  type="text"
+                  className="materialize-textarea"
+                ></textarea>
+                <span className="helper-text">Ingredients</span>
+              </div>
+              <div className="input-field col s12">
+                <textarea
+                  name="instructions"
+                  value={instructions}
+                  onChange={this.handleChange}
+                  type="text"
+                  className="materialize-textarea"
+                ></textarea>
+                <span className="helper-text">Instructions</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  name="category"
+                  value={category}
+                  onChange={this.handleChange}
+                  type="text"
+                />
+                <span className="helper-text">
+                  Breafast, Brunch, Lunch, Snack, Dinner, etc.
+                </span>
+              </div>
             </div>
           </div>
-          <button>Update</button>
+          <div className="button-wrapper center-align">
+            <button className="btn waves-effect waves-light ">Update</button>
+          </div>
         </form>
       </div>
     );
