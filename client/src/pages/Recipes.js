@@ -41,7 +41,7 @@ export default class Recipes extends Component {
                     recipes.map((recipe) => (
                       <Card
                         key={recipe._id}
-                        onClick={() => this.props.history.push(`/recipes/${recipe._id}`)}
+                        onClick={() => this.props.history.push(`/recipe/${recipe._id}`)}
                       >
                         <div className="mask flex-col discover">
                           <div className="flex-col">
