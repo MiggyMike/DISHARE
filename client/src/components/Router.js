@@ -16,8 +16,9 @@ import ViewRecipe from '../pages/ViewRecipe'
 import UpdateRecipe from '../pages/UpdateRecipe'
 
 import { __CheckSession } from "../services/UserServices";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute"
 
+import "../styles/global.css";
 
 
 class Router extends Component {
@@ -101,15 +102,14 @@ class Router extends Component {
                   path="/recipes"
                   component={(props) => (
                     <Layout
-                      currentUser={this.state.currentUser}
-                      authenticated={this.state.authenticated}
+                    {...props}
                     >
                       <Recipes {...props} />
                     </Layout>
                   )}
                 />
               <Route
-                  path="/recipes/:recipe_id"
+                  path="/recipe/:recipe_id"
                   component={(props) => (
                     <Layout
                       currentUser={this.state.currentUser}
