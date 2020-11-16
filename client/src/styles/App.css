@@ -1,0 +1,11 @@
+.app {
+  text-align: center;
+  height: 100vh;
+}
+
+nav {
+  background-color: #3c3c3f;
+}
+.footer {
+  min-height: 80vh;
+}
