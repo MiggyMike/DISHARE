@@ -1,90 +1,194 @@
-import React, { Component } from 'react'
-import TextInput from '../components/TextInput'
-import { __GetRecipe, __UpdateRecipe } from '../services/RecipeServices'
+import React, { Component } from "react";
+import { __GetRecipe, __UpdateRecipe } from "../services/RecipeServices";
+
 export default class UpdateRecipe extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      title: '',
-      summary: '',
-      image_url: '',
-      ingredients: '', 
-      instructions : ''
-    }
+      title: "",
+      summary: "",
+      prepTime: "",
+      cookTime: "",
+      totalTime: "",
+      servings: "",
+      image_url: "",
+      ingredients: "",
+      instructions: "",
+      category: "",
+    };
   }
 
   componentDidMount() {
-    this.getRecipe()
+    this.getRecipe();
   }
+
   getRecipe = async () => {
     try {
-      const recipe = await __GetRecipe(this.props.match.params.recipe_id)
+      const recipe = await __GetRecipe(this.props.match.params.recipe_id);
       this.setState({
         title: recipe.title,
         summary: recipe.summary,
+        prepTime: recipe.prepTime,
+        cookTime: recipe.cookTime,
+        totalTime: recipe.totalTime,
+        servings: recipe.servings,
         image_url: recipe.image_url,
-        ingredients: recipe.ingredients, 
-        instructions : recipe.instructions
-      })
+        ingredients: recipe.ingredients,
+        instructions: recipe.instructions,
+        category: recipe.category,
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value })
-  }
+    this.setState({ [target.name]: target.value });
+  };
 
   handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      await __UpdateRecipe(this.state, this.props.match.params.recipe_id)
-      this.props.history.push('/profile')
+      await __UpdateRecipe(this.state, this.props.match.params.recipe_id);
+      this.props.history.push("/profile/:user_id");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   render() {
-    const { title, location, image_url, ingredients, instructions } = this.state
+    const {
+      title,
+      summary,
+      servings,
+      prepTime,
+      cookTime,
+      totalTime,
+      image_url,
+      ingredients,
+      instructions,
+      category,
+    } = this.state;
     return (
-      <div className="upload content">
-        <form className="flex-col" onSubmit={this.handleSubmit}>
-          <TextInput
-            placeholder="Title"
-            name="title"
-            value={title}
-            onChange={this.handleChange}
-          />
-          <TextInput
-            placeholder="Location"
-            name="location"
-            value={location}
-            onChange={this.handleChange}
-          />
-             <TextInput
-            placeholder="Image Url"
-            name="image_url"
-            value={image_url}
-            onChange={this.handleChange}
-          />
-           <TextInput
-            fieldType="textfield"
-            name="instructions"
-            placeholder="Instructions"
-            value={instructions}
-            onChange={this.handleChange}
-          />
-          <TextInput
-            fieldType="textfield"
-            name="ingredients"
-            placeholder="Ingredients"
-            value={ingredients}
-            onChange={this.handleChange}
-          />
+      <div className=" container row">
+        <form className="col s12" action="#" onSubmit={this.handleSubmit}>
+          <div className="input-field col s12">
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={this.handleChange}
+            />
+            <span className="helper-text">
+              Title
+            </span>
+          </div>
+          <div className="input-field col s12">
+            <input
+              type="text"
+              name="summary"
+              value={summary}
+              onChange={this.handleChange}
+            />
+            <span className="helper-text">
+              Summary
+            </span>
+          </div>
+          <div className="row">
+            <div className="input-field col s3">
+              <input
+                type="text"
+                name="prepTime"
+                value={prepTime}
+                onChange={this.handleChange}
+              />
+              <span class="helper-text" data-error="wrong" data-success="right">
+                Prep Time
+              </span>
+            </div>
+            <div className="input-field col s3">
+              <input
+                type="text"
+                name="cookTime"
+                value={cookTime}
+                onChange={this.handleChange}
+              />
+              <span className="helper-text">
+                Cook Time
+              </span>
+            </div>
+            <div className="input-field col s3">
+              <input
+                type="text"
+                name="totalTime"
+                value={totalTime}
+                onChange={this.handleChange}
+              />
+              <span className="helper-text">
+                Total Time
+              </span>
+            </div>
+            <div className="input-field col s3">
+              <input
+                type="text"
+                name="servings"
+                value={servings}
+                onChange={this.handleChange}
+              />
+              <span className="helper-text">
+                Servings
+              </span>
+            </div>
+            <div className="input-field col s12">
+              <input
+                name="image_url"
+                value={image_url}
+                onChange={this.handleChange}
+                type="text"
+              />
+              <span className="helper-text">
+                Image URL
+              </span>
+            </div>
+            <div className="input-field col s12">
+              <textarea
+                name="ingredients"
+                value={ingredients}
+                onChange={this.handleChange}
+                type="text"
+                className="materialize-textarea"
+              ></textarea>
+              <span className="helper-text">
+                Ingredients
+              </span>
+            </div>
+            <div className="input-field col s12">
+              <textarea
+                name="instructions"
+                value={instructions}
+                onChange={this.handleChange}
+                type="text"
+                className="materialize-textarea"
+              ></textarea>
+              <span className="helper-text">
+                Instructions
+              </span>
+            </div>
+            <div className="input-field col s12">
+              <input
+                name="category"
+                value={category}
+                onChange={this.handleChange}
+                type="text"
+              />
+              <span  className="helper-text">
+                Breafast, Brunch, Lunch, Snack, Dinner, etc.
+              </span>
+            </div>
+          </div>
           <button>Update</button>
         </form>
       </div>
-    )
+    );
   }
 }
