@@ -24,7 +24,6 @@ export default class ViewRecipe extends Component {
   };
 
   render() {
-    console.log(this.state.recipe);
     const { recipe } = this.state;
     if (this.state.recipe) {
       return (
