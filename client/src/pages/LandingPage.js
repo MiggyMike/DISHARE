@@ -1,11 +1,5 @@
-import React from 'react'
-import Nav from '../components/Nav'
+import React from "react";
 
 export default ({ children }) => {
-  return (
-<div className="">
-        <Nav />
-        {children}
-    </div>
-  )
-}
+  return <div className="">{children}</div>;
+};
