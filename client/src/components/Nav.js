@@ -1,25 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default ({ authenticated, currentUser, className }) => {
   return authenticated && currentUser ? (
     <header className={className}>
       <nav className="nav-wrapper">
-        <Link to="/" className="brand-logo center">
+        <NavLink to="/" className="brand-logo center">
           di/SH/are
-        </Link>
+        </NavLink>
         <ul id="nav-mobile" className="left hide-on-small-and-down">
           <li>
-            <Link to="/recipes"> Recipes </Link>
+            <NavLink to="/recipes"> Recipes </NavLink>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <NavLink to="/profile">Profile</NavLink>
           </li>
           <li>
-            <Link to="/upload">Post Recipe</Link>
+            <NavLink to="/upload">Post Recipe</NavLink>
           </li>
           <li>
-            <Link to="/">Sign Out</Link>
+            <NavLink to="/" onClick={() => localStorage.clear()}>
+              {console.log("signed out")}
+              Sign Out
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -27,18 +30,18 @@ export default ({ authenticated, currentUser, className }) => {
   ) : (
     <header className={className}>
       <nav className="nav-wrapper">
-        <Link to="/" className="brand-logo center">
+        <NavLink to="/" className="brand-logo center">
           di/SH/are
-        </Link>
+        </NavLink>
         <ul id="nav-mobile" className="left hide-on-small-and-down">
           <li>
-            <Link to="/recipes">Recipes</Link>
+            <NavLink to="/recipes">Recipes</NavLink>
           </li>
           <li>
-            <Link to="/login">Sign In</Link>
+            <NavLink to="/login">Sign In</NavLink>
           </li>
           <li>
-            <Link to="/register">Sign Up</Link>
+            <NavLink to="/register">Sign Up</NavLink>
           </li>
         </ul>
       </nav>
