@@ -2,19 +2,22 @@ const { Recipe, Comment } = require("../db/schema");
 
 const CreateComment = async (req, res) => {
   try {
-    const comment = new Comment({ ...req.body, user_id: req.params.user_id });
-    console.log(3);
-    comment.save();
-    await Recipe.update(
+    const comment = await new Comment({
+      ...req.body,
+      user_id: req.params.user_id,
+    });
+    await comment.save();
+    await Recipe.findByIdAndUpdate(
       { _id: req.params.recipe_id },
-      {
-        $push: {
-          comments: comment,
-        },
+      { $push: { comments: comment } },
+      { upsert: true, new: true, useFindAndModify: false },
+      (err, updatedRecipe) => {
+        if (err) {
+          console.log(err);
+        }
+        res.send(updatedRecipe);
       }
     );
-    res.send(comment);
-    console.log(4);
   } catch (error) {
     throw error;
   }
