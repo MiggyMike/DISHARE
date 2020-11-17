@@ -28,11 +28,10 @@ export default class CreateComment extends Component {
   };
 
   render() {
-    console.log(this.props.currentUser);
     const { comment } = this.state;
     return (
       <div className="row">
-        <form className="col s12" action="#" onSubmit={this.handleSubmit}>
+        <form className="col s12" onSubmit={this.handleSubmit}>
           <div className="input-field col s12">
             <textarea
               name="comment"
