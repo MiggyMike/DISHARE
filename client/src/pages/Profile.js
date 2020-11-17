@@ -4,11 +4,12 @@ import { __DeleteRecipe } from "../services/RecipeServices";
 import { __GetProfile } from "../services/UserServices";
 
 export default class Profile extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       recipeFetchError: false,
       recipes: [],
+      currentUser: props.currentUser.name,
     };
   }
 
@@ -40,11 +41,12 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <div className="profile">
-        <div className="user content"></div>
+      <div className="profile container">
+        <div className="user-content"></div>
+        <h4 className="icon">Welcome back {this.state.currentUser}</h4>
         <div>
           {this.state.recipes.length ? (
-            <div className="recipe-content container row ">
+            <div className="recipe-content row ">
               <div></div>
               {this.state.recipes.map((recipe) => (
                 <div key={recipe._id} className="col s4">
@@ -55,7 +57,7 @@ export default class Profile extends Component {
                   >
                     <div className="">
                       <div className="card-content">
-                        <h3>{recipe.title}</h3>
+                        <h3 className="truncate">{recipe.title}</h3>
                         <p>{recipe.description}</p>
                       </div>
                     </div>
