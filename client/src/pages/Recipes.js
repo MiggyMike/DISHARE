@@ -17,8 +17,8 @@ export default class Recipes extends Component {
 
   getRecipes = async () => {
     try {
-      const recipes = await __GetRecipes(this.state.currentPage);
-      this.setState({ recipes: [...this.state.recipes, ...recipes] });
+      const foundRecipes = await __GetRecipes(this.state.currentPage);
+      this.setState({ recipes: foundRecipes });
     } catch (err) {
       console.log(err);
     }
@@ -29,6 +29,7 @@ export default class Recipes extends Component {
       (prevstate) => ({ currentPage: prevstate.currentPage + 1 }),
       () => this.getRecipes()
     );
+
   render() {
     const { recipes } = this.state;
     return (
@@ -68,7 +69,7 @@ export default class Recipes extends Component {
           ) : (
             <h3>No Recipes</h3>
           )}
-          <button onClick={this.incrementPage}>Load More</button>
+          <button onClick={() => this.incrementPage()}>Load More</button>
         </section>
       </div>
     );
