@@ -47,7 +47,11 @@ export default class CreateRecipe extends Component {
     } = this.state;
     return (
       <div className=" post-recipe container row">
-        <form className="col s12" action="#" onSubmit={this.handleSubmit}>
+        <form
+          className=" center col s12"
+          action="#"
+          onSubmit={this.handleSubmit}
+        >
           <div className="input-field col s12">
             <input
               type="text"
