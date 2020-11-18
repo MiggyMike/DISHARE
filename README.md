@@ -1,4 +1,4 @@
-## ![MOCK IMGS](./img/Cover.png)
+# DI/SH/ARE
 
 ## Novermber 10, 2020
 
