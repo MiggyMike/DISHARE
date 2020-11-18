@@ -4,7 +4,7 @@ const ApiClient = axios.create({
   baseURL:
     process.env.NODE_ENV === "production"
       ? `${window.location.origin}/api`
-      : "mongodb://localhost:27017/MyAPI/api",
+      : "http://localhost:3002/api",
 });
 
 ApiClient.interceptors.request.use(
