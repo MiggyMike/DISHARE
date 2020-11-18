@@ -70,7 +70,8 @@ export default class Recipes extends Component {
                   </div>
                   <div className="card-reveal">
                     <span className="card-title grey-text text-darken-4">
-                      Card Title<i className="material-icons right">close</i>
+                      {recipe.title}
+                      <i className="material-icons right">close</i>
                     </span>
                     <p>Summary: {recipe.summary.substring(0, 50)}...</p>
                     <p>Total Time: {recipe.totalTime.substring(0, 50)}...</p>
