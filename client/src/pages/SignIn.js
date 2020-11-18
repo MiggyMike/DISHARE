@@ -32,40 +32,36 @@ export default class SignIn extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="container">
-        <div className="row">
+      <div className="container signUp-page">
+        <div className="signup">
           <div className="col s12 l8">
-            <div className="card ">
-              <div className="card-content">
-                <div>
-                  <form className="flex-col" onSubmit={this.handleSubmit}>
-                    <TextInput
-                      placeholder="Your Email"
-                      name="email"
-                      type="email"
-                      value={email}
-                      onChange={this.handleChange}
-                    />
-                    <TextInput
-                      placeholder="Password"
-                      name="password"
-                      type="password"
-                      value={password}
-                      onChange={this.handleChange}
-                    />
-                    <button className="btn waves-effect waves-light blue">
-                      <i className="material-icons right">
-                        keyboard_arrow_right
-                      </i>
-                      Sign In
-                    </button>
-                    {this.state.formError ? (
-                      <p>Error While Logging In</p>
-                    ) : (
-                      <p></p>
-                    )}
-                  </form>
-                </div>
+            <div className="card-content">
+              <div>
+                <form className="flex-col" onSubmit={this.handleSubmit}>
+                  <TextInput
+                    placeholder="Your Email"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={this.handleChange}
+                  />
+                  <TextInput
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    value={password}
+                    onChange={this.handleChange}
+                  />
+                  <button className="btn waves-effect waves-light blue">
+                    <i className="material-icons right">keyboard_arrow_right</i>
+                    Sign In
+                  </button>
+                  {this.state.formError ? (
+                    <p>Error While Logging In</p>
+                  ) : (
+                    <p></p>
+                  )}
+                </form>
               </div>
             </div>
           </div>
