@@ -72,7 +72,7 @@ export default class UpdateRecipe extends Component {
     return (
       <div className="container row">
         <form className="col s12" action="#" onSubmit={this.handleSubmit}>
-          <div className="card">
+          <div className="">
             <div className="input-field col s12">
               <input
                 type="text"
