@@ -32,12 +32,12 @@ export default class SignIn extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="container signUp-page">
+      <div className="container signup-page">
         <div className="signup">
           <div className="col s12 l8">
             <div className="card-content">
               <div>
-                <form className="flex-col" onSubmit={this.handleSubmit}>
+                <form className="row center" onSubmit={this.handleSubmit}>
                   <TextInput
                     placeholder="Your Email"
                     name="email"
@@ -52,7 +52,7 @@ export default class SignIn extends Component {
                     value={password}
                     onChange={this.handleChange}
                   />
-                  <button className="btn waves-effect waves-light blue">
+                  <button className="btn-large waves-effect waves-light blue">
                     <i className="material-icons right">keyboard_arrow_right</i>
                     Sign In
                   </button>

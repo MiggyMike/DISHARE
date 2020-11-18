@@ -31,32 +31,39 @@ export default class Signup extends Component {
   render() {
     const { name, password, email } = this.state;
     return (
-      <div className="container signUp-page">
-        <div className="signup">
-          <form className="" onSubmit={this.handleSubmit}>
-            <TextInput
-              placeholder="Your Email"
-              name="email"
-              value={email}
-              type="email"
-              onChange={this.handleChange}
-            />
-            <TextInput
-              placeholder="Your Name"
-              type="text"
-              name="name"
-              value={name}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              placeholder="Password"
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-            <button className="btn-large blue">Sign Up</button>
-          </form>
+      <div className="container signup-page">
+        <div className=" signup">
+          <div className="col s12 l8">
+            <div className="card-content">
+              <form className="row center" onSubmit={this.handleSubmit}>
+                <TextInput
+                  placeholder="Your Email"
+                  name="email"
+                  value={email}
+                  type="email"
+                  onChange={this.handleChange}
+                />
+                <TextInput
+                  placeholder="Your Name"
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
+                />
+                <TextInput
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                />
+                <button className="btn-large waves-effect waves-light blue">
+                  <i className="material-icons right">keyboard_arrow_right</i>
+                  Sign Up
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     );
