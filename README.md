@@ -1,4 +1,4 @@
-# DI/SH/ARE
+![MOCK IMGS](./img/Cover.png)
 
 ## Novermber 10, 2020
 
@@ -14,6 +14,10 @@ Produce a recipie sharing blog site where user can post, like and save recipies 
 
 In essence this would be an extension of the [You Tried It](http://you-tried-it.surge.sh/index.html) application.
 
+Save, Share and Find new recipe's with foodies like yourself!
+
+Cook, Eat, and ENJOY!
+
 ---
 
 ### Technologies Used
@@ -24,16 +28,19 @@ In essence this would be an extension of the [You Tried It](http://you-tried-it.
 - HMTL/CSS/JavaScript
 - Mongoose
 - MongoDB
+- Materialize for styling
 
 ---
 
 ### Demo/Mockup/Wireframes/Live Demo
 
-![DEMO](./img)
-![MOCK IMGS](./img)
-![MOCK IMGS](./img)
-![MOCK IMGS](./img)
-![MOCK IMGS](./img)
+![DEMO](./img/Home1.png)
+![MOCK IMGS](./img/Profile.png)
+![MOCK IMGS](./img/allRecipes.png)
+![MOCK IMGS](./img/postRecipe.png)
+![MOCK IMGS](./img/fullPage.png)
+![MOCK IMGS](./img/mobileHome.png)
+![MOCK IMGS](./img/editDelete.png)
 
 ---
 
@@ -46,7 +53,7 @@ Project was deployed on netlify and can be found [here](link).
 
 ### Future updates / Stretch Goals / Planned Improvements / Post MVP
 
-- [ ] auth
+- [x] auth
 - [ ] 3rd party api
 - [ ] sockets
 - [ ] ui library
@@ -63,3 +70,7 @@ Project was deployed on netlify and can be found [here](link).
 ---
 
 ### Credits
+
+- imgs from [unsplash](https://miggymike.github.io/) and google.
+- Materialize
+- Google Fonts
