@@ -3,3 +3,7 @@
   height: 100vh;
   font-family: "Amatic SC", cursive;
 }
+
+.comments-card {
+  padding: 10%;
+}
