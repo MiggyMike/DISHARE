@@ -17,13 +17,9 @@ export default (props) => {
       </div>
 
       <div className="row container section home-section-one">
-        <div className="col s4">
+        <div className="col s12 m6 l3">
           <h4 className="center home-trio rotated">Cook</h4>
           <img
-            // style={{
-            //   height: "35vh",
-            //   width: "100%",
-            // }}
             className="responsive-img"
             src="https://pinchofyum.com/wp-content/uploads/Crockpot-Ragu-for-Skinnytaste-5.jpg"
             alt=""
@@ -36,13 +32,9 @@ export default (props) => {
             groundnut.
           </p>
         </div>
-        <div className=" col s4 ">
+        <div className=" col s12 m6 l3 ">
           <h4 className="center home-trio rotated">Share</h4>
           <img
-            // style={{
-            //   height: "35vh",
-            //   width: "100%",
-            // }}
             className="responsive-img"
             src="https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
             alt=""
@@ -56,13 +48,9 @@ export default (props) => {
             leberkas venison bacon.
           </p>
         </div>
-        <div className="col s4 ">
+        <div className="col s12 m6 l3 ">
           <h4 className="center home-trio rotated">Eat</h4>
           <img
-            // style={{
-            //   height: "309px",
-            //   width: "100%",
-            // }}
             className="responsive-img"
             src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
             alt=""
@@ -86,34 +74,5 @@ export default (props) => {
         </div>
       </div>
     </div>
-
-    // <div className="row">
-    //   <div
-    //     className="col s2"
-    //     style={{
-    //       backgroundImage: `url('https://www.forksoverknives.com/wp-content/uploads/plantbased-diet.jpg')`,
-    //       minHeight: "100vh",
-    //       width: "50vw",
-    //       backgroundSize: "cover",
-    //       paddingTop: "3vh",
-    //     }}
-    //   >
-    //     <h2>Test</h2>
-    //   </div>
-    //   <div
-    //     className="col s10"
-    //     style={{
-    //       backgroundColor: "white",
-    //       minHeight: "100vh",
-    //       width: "50vw",
-    //       backgroundSize: "cover",
-    //       paddingTop: "3vh",
-    //     }}
-    //   >
-    //     <h1>Block</h1>
-    //     <SignIn />
-    //     <SignUp />
-    //   </div>
-    // </div>
   );
 };
