@@ -35,7 +35,7 @@ export default class ViewRecipe extends Component {
                 <div className="img-sum-wrapper row">
                   <div className="image-wrapper col s6">
                     <img
-                      className="responsive-img"
+                      className="responsive-img vp-img"
                       src={recipe.image_url}
                       alt="recipe"
                     />
@@ -67,12 +67,12 @@ export default class ViewRecipe extends Component {
               />
             </div>
             <div className="card comments-card">
-              <div className="stats row">
-                <div className="col">
+              <div className="row">
+                <div className="col s12">
                   <p>Comments: {recipe.comments.length}</p>
                 </div>
               </div>
-              <h3>Comments</h3>
+              <h3 className="">Comments</h3>
               {recipe.comments.length ? (
                 recipe.comments.map((comment, index) => (
                   <div className="comment-item" key={index}>
@@ -80,6 +80,7 @@ export default class ViewRecipe extends Component {
                       <Link to="">{comment.user_id.name}</Link>
                     </p>
                     <p>{comment.comment}</p>
+                    <div className="divider"></div>
                   </div>
                 ))
               ) : (
