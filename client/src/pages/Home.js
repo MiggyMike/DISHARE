@@ -15,10 +15,11 @@ export default (props) => {
           </h1>
         </div>
       </div>
+      <div className="bg-image-greet"></div>
 
       <div className="section home-section-one">
         <div className=" row center container ">
-          <div className="col s12 m8 l4">
+          <div className="col s12 m8 l4 offset-m2">
             <h4 className=" home-trio rotated">Cook</h4>
             <img
               className="responsive-img"
@@ -33,7 +34,7 @@ export default (props) => {
               corn groundnut.
             </p>
           </div>
-          <div className=" col s12 m8 l4 ">
+          <div className=" col s12 m8 l4 offset-m2">
             <h4 className=" home-trio rotated">Share</h4>
             <img
               className="responsive-img"
@@ -49,7 +50,7 @@ export default (props) => {
               round flank sirloin leberkas venison bacon.
             </p>
           </div>
-          <div className="col s12 m8 l4 ">
+          <div className="col s12 m8 l4 offset-m2">
             <h4 className=" home-trio rotated">Eat</h4>
             <img
               className="responsive-img"
