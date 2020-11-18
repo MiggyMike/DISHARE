@@ -177,7 +177,7 @@ export default class UpdateRecipe extends Component {
             </div>
           </div>
           <div className="button-wrapper center-align">
-            <button className="btn waves-effect waves-light ">Update</button>
+            <button className="btn waves-effect waves-light ">UPDATE</button>
           </div>
         </form>
       </div>

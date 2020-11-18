@@ -146,7 +146,7 @@ export default class CreateRecipe extends Component {
               <label>Breakfast, Lunch, Dinner, Dessert, Snack, etc.</label>
             </div>
           </div>
-          <button className="btn-small blue ">Upload</button>
+          <button className="btn-small blue ">POST</button>
         </form>
       </div>
     );
