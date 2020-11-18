@@ -1,3 +1,6 @@
+div.signup-page {
+  height: 75vh;
+}
 .signup,
 .signin {
   display: flex;
@@ -23,4 +26,8 @@
 .signin form input {
   margin: 1em auto;
   width: 100%;
+}
+
+button {
+  margin-top: 10%;
 }
