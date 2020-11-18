@@ -18,13 +18,13 @@ export default (props) => {
             <h5 className="white-text">More</h5>
             <ul>
               <li>
-                <Link
+                <a
                   className="grey-text text-lighten-3"
-                  to="https://carnaldish.com/"
+                  href="https://carnaldish.com/"
                   target="_blank"
                 >
                   Carnal Dish
-                </Link>
+                </a>
               </li>
               <li>
                 <a
