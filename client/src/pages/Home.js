@@ -16,51 +16,54 @@ export default (props) => {
         </div>
       </div>
 
-      <div className="row container section home-section-one">
-        <div className="col s12 m6 l3">
-          <h4 className="center home-trio rotated">Cook</h4>
-          <img
-            className="responsive-img"
-            src="https://pinchofyum.com/wp-content/uploads/Crockpot-Ragu-for-Skinnytaste-5.jpg"
-            alt=""
-          />
-          <p>
-            Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi
-            radish okra azuki bean corn fava bean mustard tigernut jï¿½cama
-            green bean celtuce collard greens avocado quandong fennel gumbo
-            black-eyed pea. Grape silver beet watercress potato tigernut corn
-            groundnut.
-          </p>
-        </div>
-        <div className=" col s12 m6 l3 ">
-          <h4 className="center home-trio rotated">Share</h4>
-          <img
-            className="responsive-img"
-            src="https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-            alt=""
-          />
-          <p>
-            Prosciutto rump doner, pork chop kevin shank kielbasa beef drumstick
-            andouille salami. Porchetta chicken jerky venison ham short loin
-            bacon. Short ribs rump ham hock fatback short loin boudin biltong
-            filet mignon turkey porchetta ball tip cupim shank ground round.
-            Pastrami shoulder chislic hamburger, cow ground round flank sirloin
-            leberkas venison bacon.
-          </p>
-        </div>
-        <div className="col s12 m6 l3 ">
-          <h4 className="center home-trio rotated">Eat</h4>
-          <img
-            className="responsive-img"
-            src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
-            alt=""
-          />
-          <p>
-            Fruitcake cake apple pie dragée topping cake caramels. Tootsie roll
-            chocolate bar gummies oat cake jujubes pastry jelly-o topping.
-            Tootsie roll chocolate jelly beans halvah I love. Halvah I love cake
-            I love croissant muffin candy canes chocolate tootsie roll.
-          </p>
+      <div className="section home-section-one">
+        <div className=" row center container ">
+          <div className="col s12 m8 l4">
+            <h4 className=" home-trio rotated">Cook</h4>
+            <img
+              className="responsive-img"
+              src="https://pinchofyum.com/wp-content/uploads/Crockpot-Ragu-for-Skinnytaste-5.jpg"
+              alt=""
+            />
+            <p>
+              Pea horseradish azuki bean lettuce avocado asparagus okra.
+              Kohlrabi radish okra azuki bean corn fava bean mustard tigernut
+              jï¿½cama green bean celtuce collard greens avocado quandong fennel
+              gumbo black-eyed pea. Grape silver beet watercress potato tigernut
+              corn groundnut.
+            </p>
+          </div>
+          <div className=" col s12 m8 l4 ">
+            <h4 className=" home-trio rotated">Share</h4>
+            <img
+              className="responsive-img"
+              src="https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
+              alt=""
+            />
+            <p>
+              Prosciutto rump doner, pork chop kevin shank kielbasa beef
+              drumstick andouille salami. Porchetta chicken jerky venison ham
+              short loin bacon. Short ribs rump ham hock fatback short loin
+              boudin biltong filet mignon turkey porchetta ball tip cupim shank
+              ground round. Pastrami shoulder chislic hamburger, cow ground
+              round flank sirloin leberkas venison bacon.
+            </p>
+          </div>
+          <div className="col s12 m8 l4 ">
+            <h4 className=" home-trio rotated">Eat</h4>
+            <img
+              className="responsive-img"
+              src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+              alt=""
+            />
+            <p>
+              Fruitcake cake apple pie dragée topping cake caramels. Tootsie
+              roll chocolate bar gummies oat cake jujubes pastry jelly-o
+              topping. Tootsie roll chocolate jelly beans halvah I love. Halvah
+              I love cake I love croissant muffin candy canes chocolate tootsie
+              roll.
+            </p>
+          </div>
         </div>
       </div>
 
