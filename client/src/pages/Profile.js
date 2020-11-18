@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "../components/Card";
+import { Link } from "react-router-dom";
 import { __DeleteRecipe } from "../services/RecipeServices";
 import { __GetProfile } from "../services/UserServices";
 
@@ -44,40 +44,61 @@ export default class Profile extends Component {
       <div className="profile container">
         <div className="user-content"></div>
         <h4 className="icon">Welcome back {this.state.currentUser}</h4>
-        <div>
+        <div className="row">
           {this.state.recipes.length ? (
-            <div className="recipe-content row ">
-              <div></div>
+            <div className="">
               {this.state.recipes.map((recipe) => (
-                <div key={recipe._id} className="col s4">
-                  <Card
-                    onClick={() =>
-                      this.props.history.push(`/recipe/${recipe._id}`)
-                    }
-                  >
-                    <div className="">
-                      <div className="card-content">
-                        <h3 className="truncate">{recipe.title}</h3>
-                        <p>{recipe.description}</p>
+                <div key={recipe._id} className="">
+                  <div className="">
+                    <div className=" col s12 m6 l4">
+                      <div className="card hoverable">
+                        <div className="card-image waves-effect waves-block waves-light">
+                          <img
+                            className="activator"
+                            src={recipe.image_url}
+                            alt="current of food"
+                          />
+                        </div>
+                        <div className="card-content">
+                          <span className="card-title activator grey-text text-darken-4">
+                            {recipe.title}
+                            <i className="material-icons right">more_vert</i>
+                          </span>
+                          <p>
+                            <Link
+                              to="#"
+                              onClick={() =>
+                                this.props.history.push(`/recipe/${recipe._id}`)
+                              }
+                            >
+                              View Post
+                            </Link>
+                          </p>
+                        </div>
+                        <div className="card-reveal">
+                          <div className="card-title grey-text text-darken-4">
+                            <i className="material-icons right">close</i>
+                            <span>{recipe.title}</span>
+                          </div>
+                          <div className="row">
+                            <button
+                              className="btn blue col s12"
+                              onClick={() =>
+                                this.props.history.push(`/edit/${recipe._id}`)
+                              }
+                            >
+                              Edit
+                            </button>
+                            <button
+                              className="btn red  col s12"
+                              onClick={() => this.deleteRecipe(recipe._id)}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <img src={recipe.image_url} alt="current of food" />
-                  </Card>
-                  <div className="">
-                    <button
-                      className="btn blue col s4"
-                      onClick={() =>
-                        this.props.history.push(`/edit/${recipe._id}`)
-                      }
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="btn red right col s4"
-                      onClick={() => this.deleteRecipe(recipe._id)}
-                    >
-                      Delete
-                    </button>
                   </div>
                 </div>
               ))}

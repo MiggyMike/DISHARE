@@ -46,7 +46,7 @@ export default class CreateRecipe extends Component {
       category,
     } = this.state;
     return (
-      <div className=" container row">
+      <div className=" post-recipe container row">
         <form className="col s12" action="#" onSubmit={this.handleSubmit}>
           <div className="input-field col s12">
             <input
@@ -142,7 +142,7 @@ export default class CreateRecipe extends Component {
               <label>Breakfast, Lunch, Dinner, Dessert, Snack, etc.</label>
             </div>
           </div>
-          <button>Upload</button>
+          <button className="btn-small blue ">Upload</button>
         </form>
       </div>
     );

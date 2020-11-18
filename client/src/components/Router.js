@@ -67,98 +67,81 @@ class Router extends Component {
         {this.state.pageLoading ? (
           <h3>Loading...</h3>
         ) : (
-          <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => (
-                <LandingPage>
-                  <Home />
-                </LandingPage>
-              )}
-            />
-            <Route
-              path="/register"
-              component={(props) => (
-                <LandingPage>
-                  <SignUp {...props} />
-                </LandingPage>
-              )}
-            />
-            <Route
-              path="/login"
-              component={(props) => (
-                <LandingPage>
-                  <SignIn
-                    toggleAuthenticated={this.toggleAuthenticated}
-                    {...props}
-                  />
-                </LandingPage>
-              )}
-            />
-            <Route
-              path="/recipes"
-              component={(props) => (
-                <Layout {...props}>
-                  <Recipes {...props} />
-                </Layout>
-              )}
-            />
-            <Route
-              path="/recipe/:recipe_id"
-              component={(props) => (
-                <Layout
-                  currentUser={this.state.currentUser}
-                  authenticated={this.state.authenticated}
-                >
-                  <ViewRecipe {...props} />
-                </Layout>
-              )}
-            />
-            <ProtectedRoute
-              authenticated={this.state.authenticated}
-              path="/profile"
-              component={(props) => (
-                <Layout
-                  currentUser={this.state.currentUser}
-                  authenticated={this.state.authenticated}
-                >
+          <Layout
+            {...this.props}
+            currentUser={this.state.currentUser}
+            authenticated={this.state.authenticated}
+            toggleAuthenticated={this.toggleAuthenticated}
+          >
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={(props) => (
+                  <LandingPage>
+                    <Home {...props} />
+                  </LandingPage>
+                )}
+              />
+              <Route
+                path="/register"
+                component={(props) => (
+                  <LandingPage>
+                    <SignUp {...props} />
+                  </LandingPage>
+                )}
+              />
+              <Route
+                path="/login"
+                component={(props) => (
+                  <LandingPage>
+                    <SignIn
+                      toggleAuthenticated={this.toggleAuthenticated}
+                      {...props}
+                    />
+                  </LandingPage>
+                )}
+              />
+              <Route
+                path="/recipes"
+                component={(props) => <Recipes {...props} />}
+              />
+              <Route
+                path="/recipe/:recipe_id"
+                component={(props) => (
+                  <ViewRecipe {...props} currentUser={this.state.currentUser} />
+                )}
+              />
+              <ProtectedRoute
+                authenticated={this.state.authenticated}
+                path="/profile"
+                component={(props) => (
                   <Profile {...props} currentUser={this.state.currentUser} />
-                </Layout>
-              )}
-            />
-            *{" "}
-            <ProtectedRoute
-              authenticated={this.state.authenticated}
-              path="/upload"
-              component={(props) => (
-                <Layout
-                  currentUser={this.state.currentUser}
-                  authenticated={this.state.authenticated}
-                >
+                )}
+              />
+
+              <ProtectedRoute
+                authenticated={this.state.authenticated}
+                path="/upload"
+                component={(props) => (
                   <CreateRecipe
                     {...props}
                     currentUser={this.state.currentUser}
                   />
-                </Layout>
-              )}
-            />
-            <ProtectedRoute
-              authenticated={this.state.authenticated}
-              path="/edit/:recipe_id"
-              component={(props) => (
-                <Layout
-                  currentUser={this.state.currentUser}
-                  authenticated={this.state.authenticated}
-                >
+                )}
+              />
+              <ProtectedRoute
+                authenticated={this.state.authenticated}
+                path="/edit/:recipe_id"
+                component={(props) => (
                   <UpdateRecipe
                     {...props}
                     currentUser={this.state.currentUser}
                   />
-                </Layout>
-              )}
-            />
-          </Switch>
+                )}
+              />
+            </Switch>
+          </Layout>
         )}
       </main>
     );

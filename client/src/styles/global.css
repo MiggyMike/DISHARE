@@ -1,0 +1,34 @@
+/* img {
+  width: 100%;
+  max-height: fit-content;
+  border-style: none;
+} */
+
+.recipe-card {
+  max-height: 24em;
+}
+
+.recipe-card .img {
+  max-height: 50%;
+}
+/* .profile .card {
+  height: 25vh;
+}
+
+.profile .card img {
+  height: 15vw;
+  object-fit: cover;
+}
+
+.profile h3 {
+  font-size: 1.5rem;
+  word-wrap: normal;
+  width: 100%;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comments-card {
+  padding: 8%;
+} */

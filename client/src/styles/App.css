@@ -1,11 +1,15 @@
 .app {
   text-align: center;
   height: 100vh;
+  font-family: "Amatic SC", cursive;
 }
 
 nav {
   background-color: #3c3c3f;
 }
-.footer {
-  min-height: 80vh;
+
+.page-footer {
+  margin-top: 25%;
+  background-color: #3c3c3f;
+  min-height: 7vh;
 }

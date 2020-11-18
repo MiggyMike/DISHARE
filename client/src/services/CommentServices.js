@@ -5,7 +5,6 @@ export const __UploadComment = async (commentText, recipeId, userId) => {
     const res = await ApiClient.post(`/comments/${recipeId}/user/${userId}`, {
       comment: commentText,
     });
-    console.log(res.data);
     return res.data;
   } catch (error) {
     throw error;

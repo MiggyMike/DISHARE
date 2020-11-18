@@ -1,0 +1,85 @@
+<div className="" key={recipe._id}>
+                <div className="col s2 m2">
+                  <h4 className="header">{recipe.title}</h4>
+                  <div className="card horizontal recipe-card">
+                    <div className="card-image">
+                      <img
+                        className="responsive-img"
+                        src={recipe.image_url}
+                        alt=""
+                      />
+                    </div>
+                    <div className="card-stacked col s12">
+                      <div className="card-content">
+                        <p>{recipe.summary.substring(0, 50)}...</p>
+                      </div>
+                      <div className="card-action">
+                        <Link
+                          className=" blue-text text-lighten-1"
+                          to="#"
+                          onClick={() =>
+                            this.props.history.push(`/recipe/${recipe._id}`)
+                          }
+                        >
+                          View More
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              return (
+      <div className=" container recipe ">
+        <h2>Popular Recipes</h2>
+        <section className="">
+          {recipes.length ? (
+            recipes.map((recipe) => (
+              <div className="card">
+                <div className="card-image waves-effect waves-block waves-light">
+                  <img
+                    className="responsive-img"
+                    src={recipe.image_url}
+                    alt=""
+                  />
+                </div>
+                <div className="card-content">
+                  <span className="card-title activator grey-text text-darken-4">
+                    {recipe.title}
+                    <i className="material-icons right">more_vert</i>
+                  </span>
+                  <p>
+                    <Link
+                      className=" blue-text text-lighten-1"
+                      to="#"
+                      onClick={() =>
+                        this.props.history.push(`/recipe/${recipe._id}`)
+                      }
+                    >
+                      View More
+                    </Link>
+                  </p>
+                </div>
+                <div className="card-reveal">
+                  <span className="card-title grey-text text-darken-4">
+                    Card Title<i className="material-icons right">close</i>
+                  </span>
+                  <p>{recipe.summary.substring(0, 50)}...</p>
+                  <p>Total Time: {recipe.totalTime.substring(0, 50)}...</p>
+                  <p>Servings: {recipe.servings.substring(0, 50)}</p>
+                  <p>Category: {recipe.category.substring(0, 50)}</p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <h3>No Recipes</h3>
+          )}
+          <button
+            className="btn #42a5f5 blue lighten-1 waves-light waves-effect"
+            onClick={() => this.incrementPage()}
+          >
+            Load More
+          </button>
+        </section>
+      </div>

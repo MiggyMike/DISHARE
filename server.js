@@ -1,6 +1,9 @@
-const AppRouter = require("./routes/AppRouter");
-
 const express = require("express");
+const AppRouter = require("./routes/AppRouter");
+// heroku setup
+///////////////
+const path = require("path");
+
 // dependenices
 ///////////////
 const logger = require("morgan");
@@ -20,14 +23,19 @@ const app = express();
 ////////////////////////////////////
 
 app.use(logger("dev"));
-app.use(helmet())
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+);
 
 app.disable("X-Powered-By");
 app.get("/", (req, res) => res.send({ msg: "Server Working" }));
-app.use('/api', AppRouter)
+app.use("/api", AppRouter);
 //  defining the Routes
 //////////////////////
 

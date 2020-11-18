@@ -1,21 +1,24 @@
 import React from "react";
-import "../styles/Home.css";
 import SignUp from "../pages/SignUp";
+import "../styles/Home.css";
 
 export default (props) => {
   return (
     <div>
       <div className="row center container home-greet">
-        <div className="col s12">
-          <h1>Welcome to DI/sh/ARE</h1>
+        <div className="col s12 home-header">
+          <h5> Welcome to</h5>
+          <h1>
+            <span className="sitename-font">di/</span>
+            sh
+            <span className="sitename-font">/are</span>
+          </h1>
         </div>
       </div>
 
-      <div className="divider"></div>
-
       <div className="row container section home-section-one">
         <div className="col s4">
-          <h4 className="center">Cook</h4>
+          <h4 className="center home-trio rotated">Cook</h4>
           <img
             // style={{
             //   height: "35vh",
@@ -34,7 +37,7 @@ export default (props) => {
           </p>
         </div>
         <div className=" col s4 ">
-          <h4 className="center">Share</h4>
+          <h4 className="center home-trio rotated">Share</h4>
           <img
             // style={{
             //   height: "35vh",
@@ -54,7 +57,7 @@ export default (props) => {
           </p>
         </div>
         <div className="col s4 ">
-          <h4 className="center">Eat</h4>
+          <h4 className="center home-trio rotated">Eat</h4>
           <img
             // style={{
             //   height: "309px",
