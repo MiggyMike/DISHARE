@@ -32,7 +32,7 @@ export default class Signup extends Component {
     const { name, password, email } = this.state;
     return (
       <div className="container signup-page">
-        <div className=" signup">
+        <div className="signup">
           <div className="col s12 l8">
             <div className="card-content">
               <form className="row center" onSubmit={this.handleSubmit}>

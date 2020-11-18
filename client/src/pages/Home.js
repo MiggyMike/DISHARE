@@ -68,12 +68,10 @@ export default (props) => {
         </div>
       </div>
 
-      <div className="divider"></div>
-
-      <div className="home-section-two valign-wrapper">
-        <div className="row center section ">
-          <div className=" col s12">
-            <SignUp className="col s12" />
+      <div className="home-section-two valign-wrapper ">
+        <div className="container section ">
+          <div className="center">
+            <SignUp />
           </div>
         </div>
       </div>

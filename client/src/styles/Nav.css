@@ -3,6 +3,15 @@ nav {
   margin-bottom: 100px;
 }
 
+.sitename-font-nav {
+  font-family: "Amatic SC", cursive;
+  font-size: 3rem;
+}
+
+.sh-nav {
+  padding-bottom: 10px;
+}
+
 .page-footer {
   margin-top: 25%;
   background-color: #3c3c3f;

@@ -7,10 +7,12 @@ export default (props) => {
     <header>
       {props.authenticated && props.currentUser ? (
         <nav className="nav-wrapper">
-          <NavLink to="/" className="brand-logo center">
-            di/SH/are
+          <NavLink to="/" className="brand-logo right hide-on-small-and-down">
+            <span className="sitename-font-nav">di/</span>
+            sh
+            <span className="sitename-font-nav">/are</span>
           </NavLink>
-          <ul id="nav-mobile" className="left hide-on-small-and-down">
+          <ul id="nav-mobile" className="left">
             <li>
               <NavLink to="/recipes"> Recipes </NavLink>
             </li>
@@ -36,10 +38,12 @@ export default (props) => {
         </nav>
       ) : (
         <nav className="nav-wrapper">
-          <NavLink to="/" className="brand-logo center">
-            di/SH/are
+          <NavLink to="/" className="brand-logo right hide-on-small-and-down">
+            <span className="sitename-font-nav">di/</span>
+            <span className="sh-nav">sh</span>
+            <span className="sitename-font-nav">/are</span>
           </NavLink>
-          <ul id="nav-mobile" className="left hide-on-small-and-down">
+          <ul id="nav-mobile" className="left ">
             <li>
               <NavLink to="/recipes">Recipes</NavLink>
             </li>
