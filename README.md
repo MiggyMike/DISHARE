@@ -1,4 +1,4 @@
-![MOCK IMGS](./img/Cover.png)
+## ![MOCK IMGS](./img/Cover.png)
 
 ## Novermber 10, 2020
 
