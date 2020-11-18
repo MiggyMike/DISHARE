@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../styles/Nav.css";
 
 export default (props) => {
   return (
@@ -17,36 +18,40 @@ export default (props) => {
             <h5 className="white-text">More</h5>
             <ul>
               <li>
-                <NavLink
+                <Link
                   className="grey-text text-lighten-3"
                   to="https://carnaldish.com/"
+                  target="_blank"
                 >
                   Carnal Dish
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
+                <a
                   className="grey-text text-lighten-3"
-                  to="http://www.stovetopkisses.com/"
+                  href="http://www.stovetopkisses.com/"
+                  target="_blank"
                 >
                   Stove Top Kisses
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink
-                  class="grey-text text-lighten-3"
-                  to="https://fitmencook.com/"
+                <a
+                  className="grey-text text-lighten-3"
+                  href="https://fitmencook.com/"
+                  target="_blank"
                 >
                   FitMenCook
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink
+                <a
                   className="grey-text text-lighten-3"
-                  to="https://www.mrbakesweets.com/"
+                  href="https://www.mrbakesweets.com/"
+                  target="_blank"
                 >
                   Mr.BAKE
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>
@@ -55,12 +60,12 @@ export default (props) => {
       <div className="footer-copyright">
         <div className="container">
           © 2020 Copyright Michael Jennings
-          <NavLink
+          <a
             className="grey-text text-lighten-4 right"
-            to="http://you-tried-it.surge.sh/"
+            href="http://you-tried-it.surge.sh/"
           >
             YouTriedIt
-          </NavLink>
+          </a>
         </div>
       </div>
     </footer>
