@@ -1,14 +1,14 @@
-const { Recipe, User, Comment } = require("../db/schema");
+const { Recipe, User, Comment } = require('../db/schema');
 
 const GetRecipes = async (req, res) => {
   try {
     const { page, limit } = req.query;
     const offset =
-      page === "1" ? 0 : Math.floor(parseInt(page) * parseInt(limit));
+      page === '1' ? 0 : Math.floor(parseInt(page) * parseInt(limit));
     const recipes = await Recipe.find()
       .limit(parseInt(limit))
       .skip(offset)
-      .sort({ popularity_rating: "desc" });
+      .sort({ popularity_rating: 'desc' });
     res.send(recipes);
   } catch (error) {
     throw error;
@@ -19,16 +19,16 @@ const GetRecipeById = async (req, res) => {
   try {
     const recipe = await Recipe.findById(req.params.recipe_id).populate([
       {
-        model: "users",
-        path: "user_id",
-        select: "_id name",
+        model: 'users',
+        path: 'user_id',
+        select: '_id name',
       },
       {
-        path: "comments",
+        path: 'comments',
         populate: {
-          path: "user_id",
-          model: "users",
-          select: "_id name",
+          path: 'user_id',
+          model: 'users',
+          select: '_id name',
         },
       },
     ]);
@@ -39,7 +39,7 @@ const GetRecipeById = async (req, res) => {
 };
 
 const CreateRecipe = async (req, res) => {
-  console.log("Summary stuff:", req.body.prepTime);
+  console.log('Summary stuff:', req.body.prepTime);
   try {
     const newRecipe = new Recipe({
       title: req.body.title,
@@ -49,7 +49,7 @@ const CreateRecipe = async (req, res) => {
       totalTime: req.body.totalTime,
       servings: req.body.servings,
       image_url: req.body.image_url,
-      ingredients: req.body.ingredients.split(", "),
+      ingredients: req.body.ingredients.split(', '),
       instructions: req.body.instructions,
       category: req.body.category,
       user_id: req.params.user_id,
@@ -66,7 +66,7 @@ const DeleteRecipe = async (req, res) => {
     const recipe = await Recipe.findById(req.params.recipe_id);
     await Comment.deleteMany({ _id: { $in: recipe.comments } });
     await Recipe.findByIdAndDelete(req.params.recipe_id);
-    res.send({ RECIPE: "deleted" });
+    res.send({ RECIPE: 'deleted' });
   } catch (error) {
     throw error;
   }
@@ -81,7 +81,7 @@ const UpdateRecipe = async (req, res) => {
       },
       { new: true, useFindAndModify: false }
     );
-    res.send({ RECIPE: "updated" });
+    res.send({ RECIPE: 'updated' });
   } catch (error) {
     throw error;
   }
