@@ -1,19 +1,27 @@
 nav {
-  background-color: #3c3c3f;
-  margin-bottom: 100px;
+    background-color: #3c3c3f;
+    margin-bottom: 100px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
+/* .sticky {
+    position: fixed;
+    top: 0;
+} */
+
 .sitename-font-nav {
-  font-family: "Amatic SC", cursive;
-  font-size: 3rem;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3rem;
 }
 
 .sh-nav {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .page-footer {
-  margin-top: 25%;
-  background-color: #3c3c3f;
-  min-height: 7vh;
+    margin-top: 25%;
+    background-color: #3c3c3f;
+    min-height: 7vh;
 }
