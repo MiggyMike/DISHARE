@@ -6,11 +6,6 @@ nav {
     z-index: 2;
 }
 
-/* .sticky {
-    position: fixed;
-    top: 0;
-} */
-
 .sitename-font-nav {
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;

@@ -6,7 +6,7 @@ export default (props) => {
     return (
         <header>
             {props.authenticated && props.currentUser ? (
-                <nav className='nav-wrapper sticky'>
+                <nav className='nav-wrapper'>
                     <NavLink
                         to='/'
                         className='brand-logo right hide-on-small-and-down'>
