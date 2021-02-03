@@ -1,9 +1,27 @@
 .app {
-  text-align: center;
-  height: 100vh;
-  font-family: "Amatic SC", cursive;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Amatic SC', cursive;
 }
 
 .comments-card {
-  padding: 10%;
+    padding: 10%;
+}
+
+main {
+    margin-top: 5rem;
+}
+
+.card .card-content .card-title {
+    display: block;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.card .card-title.activator {
+    cursor: pointer;
+}
+.card .card-title {
+    font-size: 21px;
+    font-weight: 300;
 }
